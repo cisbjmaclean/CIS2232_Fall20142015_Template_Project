@@ -1,5 +1,6 @@
 package controller;
 
+import beans.CodeValue;
 import forms.Login;
 import forms.Menu;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,15 @@ public class MenuController {
             System.out.println("User wants to view the provinces");
             mv = new ModelAndView("main");
             mv.addObject("message", "User selected View Provinces");
+        } else if (menu.getAction().equalsIgnoreCase("View Countries")) {
+            System.out.println("User wants to view the countries");
+            mv = new ModelAndView("viewCountries");
+            mv.addObject("message", "User selected View Countries");
+        } else if (menu.getAction().equalsIgnoreCase("View Codes")) {
+            System.out.println("User wants to view the codes");
+            mv = new ModelAndView("viewCodes");
+            mv.addObject("message", "User selected view codes");
+            mv.addObject("codeValue", new CodeValue());
         } else {
             mv = new ModelAndView("welcome");
         }

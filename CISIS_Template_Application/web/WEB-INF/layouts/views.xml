@@ -16,6 +16,17 @@
 	    <put-attribute name="body"	value="/WEB-INF/views/main.jsp" />
 	</definition>
 
+        <definition name="viewCountries" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/viewCountries.jsp" />
+	</definition>
+
+        <definition name="viewCodeValues" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/viewCodeValues.jsp" />
+	</definition>
+
+        <definition name="viewCodes" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/viewCodes.jsp" />
+	</definition>
 
 	<definition name="personList" extends="DefaultTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/views/personList.jsp" />

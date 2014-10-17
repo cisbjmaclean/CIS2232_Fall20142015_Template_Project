@@ -37,6 +37,7 @@ public static void loadCodes(HttpServletRequest request){
     request.getSession().setAttribute("notification_types",getCodeValues("16"));
     request.getSession().setAttribute("user_types",getCodeValues("17"));
     
+    
     return;
 }    
 

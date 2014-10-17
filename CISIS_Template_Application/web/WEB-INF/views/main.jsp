@@ -17,8 +17,8 @@
                 <c:forEach var="province" items="${sessionScope.provinces}"
 			varStatus="loopCounter">
 		<tr>
-			<td><c:out value="${loopCounter.count}" /></td>
-			<td><c:out value="${province.description}" /></td>
+                    <td><c:out value="${loopCounter.count}" /></td>
+                    <td><a href="http://localhost:8080/CISIS_Summerside/welcome?province=${province.codeValueSequence}"><c:out value="${province.description}" /></a></td>
 		</tr>
 		</c:forEach>
 

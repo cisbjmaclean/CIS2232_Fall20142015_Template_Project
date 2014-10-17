@@ -28,6 +28,11 @@ public class WelcomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String showMenu(HttpServletRequest request, 
            @RequestParam Map<String,String> allRequestParams, ModelMap model) {
+        
+        
+        System.out.println("user clicked a province-->"+allRequestParams.get("province"));
+        
+        
         System.out.println("parameter for test="+allRequestParams.get("test"));
         System.out.println("parameter for test2="+allRequestParams.get("test2"));
         this.menu = new Menu();
@@ -35,11 +40,7 @@ public class WelcomeController {
         request.getSession().setAttribute("test","This was set");
         String backFromSession = (String) request.getSession().getAttribute("test");
         System.out.println("Received back from session="+backFromSession);
-        
         model.addAttribute("menu", menu);
-        
-        
-        
         return "welcome";
     }
 
