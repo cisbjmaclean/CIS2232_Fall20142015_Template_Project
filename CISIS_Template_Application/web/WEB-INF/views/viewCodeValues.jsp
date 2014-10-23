@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
     
 <spring:nestedPath path="menu">
     <form action="" method="post">
@@ -18,8 +20,17 @@
 		<tr>
                     <td><c:out value="${loopCounter.count}" /></td>
                     <td><c:out value="${thisCode.description}" /></td>
+                    
 		</tr>
-		</c:forEach>
+
+                <tr>
+                    <td><form:input path="action" value=""/></td>
+                    <td><form:label path="action" >${menu.action}</form:label> </td>
+                    
+		</tr>
+
+                </c:forEach>
+
 
                 
                 

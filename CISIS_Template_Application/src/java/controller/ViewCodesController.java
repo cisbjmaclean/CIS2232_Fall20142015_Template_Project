@@ -2,6 +2,7 @@ package controller;
 
 import beans.CodeValue;
 import static database.CodeValueDAO.getCodeValues;
+import forms.Menu;
 import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,8 +24,11 @@ public class ViewCodesController {
         //pass validation if they enter "TEST" and "TEST"
         ModelAndView mv;
          mv = new ModelAndView("viewCodeValues");
+         Menu newMenu = new Menu();
+         newMenu.setAction("PRESET");
         System.out.println("code type entered="+codeValue.getCodeTypeId());
         ArrayList<CodeValue> test = getCodeValues(String.valueOf(codeValue.getCodeTypeId()));
+        mv.addObject("menu", newMenu);
         mv.addObject("theCollection", test);
         return mv;
     }
