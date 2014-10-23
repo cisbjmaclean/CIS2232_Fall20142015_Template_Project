@@ -54,5 +54,7 @@ public class CodeValue {
         this.codeValueSequence = codeValueSequence;
     }
 
-    
+    public String toString(){
+        return ""+codeValueSequence+"-"+description;
+    }
 }

@@ -29,6 +29,7 @@ public class ViewCodesController {
         System.out.println("code type entered="+codeValue.getCodeTypeId());
         ArrayList<CodeValue> test = getCodeValues(String.valueOf(codeValue.getCodeTypeId()));
         mv.addObject("menu", newMenu);
+        
         mv.addObject("theCollection", test);
         return mv;
     }
