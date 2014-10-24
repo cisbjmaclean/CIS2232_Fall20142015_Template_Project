@@ -1,5 +1,8 @@
 package beans;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 /**
  *
  * @author BJ
@@ -8,7 +11,12 @@ public class CodeValue {
 
     private String description;
     private String descriptionShort;
+
+    //This must be between 1-16 inclusive
+    @Min(value = 1, message = "Code must be greater than 1.")
+    @Max(value = 17, message = "Code must not be greater than 17.")
     private int codeTypeId;
+
     private int codeValueSequence;
 
     public CodeValue(String description, String descriptionShort, int codeTypeId, int codeValueSequence) {
@@ -18,10 +26,10 @@ public class CodeValue {
         this.codeValueSequence = codeValueSequence;
     }
 
-    public CodeValue(){
+    public CodeValue() {
         //nothing.
     }
-    
+
     public String getDescription() {
         return description;
     }
@@ -54,5 +62,4 @@ public class CodeValue {
         this.codeValueSequence = codeValueSequence;
     }
 
-    
 }
